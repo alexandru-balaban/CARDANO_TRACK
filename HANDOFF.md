@@ -1,9 +1,9 @@
-# PavLex / IncidentGuard — Cardano track handoff
+# PavLex / Traceward — Cardano track handoff
 
 ## What is implemented
 
 - A responsive Cardano landing page at `/`.
-- Product positioning for IncidentGuard: per-request security investigations for human operators and AI agents.
+- Product positioning for Traceward: per-request security investigations for human operators and AI agents.
 - Four-step journey: quote, wallet approval, payment/request binding, evidence report.
 - Guardrail Agent and Pentest Pro tier descriptions. Pentest Pro is framed for authorised testing only.
 - Agent API example with budget enforcement copy.
@@ -27,6 +27,8 @@ pnpm dev
 Open the local URL printed by Vite, usually `http://127.0.0.1:5173/`.
 
 ## Project decisions
+
+- Traceward is the temporary working product name, pending final branding.
 
 - Current visual identity: Cardano blue `#0033AD`, defined in `src/theme.ts`.
 - Prices, pool rewards, and terms are intentional placeholders in `src/config/placeholders.ts`.

@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
-<title id="title">IncidentGuard — request to evidence</title>
+<title id="title">Traceward — request to evidence</title>
 <desc id="desc">Proposed request lifecycle. A human or AI agent requests a scoped quote from the Cardano portal. A wallet signs a payment on Cardano preprod. The portal checks confirmation, request binding and single use before dispatching an investigation to the shared AI backend. The backend produces an evidence report and audit record, and returns the report through the portal to the requester. Growth Pool credits are an optional extension. The BSV portal shares the AI backend.</desc>
 <defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7" fill="none" stroke="#0033ad" stroke-width="1.4"/></marker>
 <style>text{font-family:Inter,Arial,sans-serif;fill:#15233c}.title{font-size:34px;font-weight:700;letter-spacing:-1px}.sub{font-size:16px;fill:#65738a}.eyebrow{font-size:11px;font-weight:700;letter-spacing:1.8px;fill:#0033ad}.step{font-size:13px;font-weight:700;letter-spacing:1px}.owner{font-size:10px;font-weight:700;letter-spacing:1.1px;fill:#66758f}.heading{font-size:23px;font-weight:700;letter-spacing:-.5px}.body{font-size:14px;fill:#63728a}.label{font-size:16px;font-weight:700}.small{font-size:14px;fill:#63728a}.white{fill:#fff}.pale{fill:#b8c8e1}.green{fill:#167a61}.return{font-size:14px;font-weight:600;fill:#0033ad}</style></defs>
@@ -97,5 +97,5 @@
 <text x="834" y="795" class="label" >BSV portal · Repo 3</text>
 <text x="834" y="817" class="body" >Separate chain-specific payments; the same AI investigation backend.</text>
 <text x="64" y="873" class="small" >Concept architecture · Wallet, payment, validator and backend integrations are not implemented yet.</text>
-<text x="1536" y="873" class="owner" text-anchor="end">PAVLEX / INCIDENTGUARD</text>
+<text x="1536" y="873" class="owner" text-anchor="end">PAVLEX / TRACEWARD</text>
 </svg>

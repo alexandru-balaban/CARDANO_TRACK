@@ -1,4 +1,4 @@
-# IncidentGuard — Cardano portal
+# Traceward — Cardano portal
 
 Cardano-facing frontend and pitch materials for the TUM Blockchain & AI Hackathon 2026. This repo is the portal layer; the shared AI backend is maintained separately.
 
