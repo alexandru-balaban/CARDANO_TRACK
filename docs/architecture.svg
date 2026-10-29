@@ -2,7 +2,7 @@
 <title id="title">Traceward — request to evidence</title>
 <desc id="desc">Proposed request lifecycle. A human or AI agent requests a scoped quote from the Cardano portal. A wallet signs a payment on Cardano preprod. The portal checks confirmation, request binding and single use before dispatching an investigation to the shared AI backend. The backend produces an evidence report and audit record, and returns the report through the portal to the requester. Growth Pool credits are an optional extension. The BSV portal shares the AI backend.</desc>
 <defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7" fill="none" stroke="#0033ad" stroke-width="1.4"/></marker>
-<style>text{font-family:Inter,Arial,sans-serif;fill:#15233c}.title{font-size:34px;font-weight:700;letter-spacing:-1px}.sub{font-size:16px;fill:#65738a}.eyebrow{font-size:11px;font-weight:700;letter-spacing:1.8px;fill:#0033ad}.step{font-size:13px;font-weight:700;letter-spacing:1px}.owner{font-size:10px;font-weight:700;letter-spacing:1.1px;fill:#66758f}.heading{font-size:23px;font-weight:700;letter-spacing:-.5px}.body{font-size:14px;fill:#63728a}.label{font-size:16px;font-weight:700}.small{font-size:14px;fill:#63728a}.white{fill:#fff}.pale{fill:#b8c8e1}.green{fill:#167a61}.return{font-size:14px;font-weight:600;fill:#0033ad}</style></defs>
+<style>text{font-family:Inter,Arial,sans-serif;fill:#15233c}.title{font-size:34px;font-weight:700;letter-spacing:-1px}.sub{font-size:16px;fill:#65738a}.eyebrow{font-size:14px;font-weight:700;letter-spacing:1px;fill:#0033ad}.step{font-size:14px;font-weight:700;letter-spacing:1px}.owner{font-size:14px;font-weight:700;letter-spacing:.4px;fill:#66758f}.heading{font-size:23px;font-weight:700;letter-spacing:-.5px}.body{font-size:14px;fill:#63728a}.label{font-size:16px;font-weight:700}.small{font-size:14px;fill:#63728a}.white{fill:#fff}.pale{fill:#b8c8e1}.green{fill:#167a61}.return{font-size:14px;font-weight:600;fill:#0033ad}</style></defs>
 <rect width="1600" height="900" fill="white"/>
 
 <text x="64" y="47" class="eyebrow" >PROPOSED ARCHITECTURE</text>
@@ -29,7 +29,7 @@
 <text x="378" y="193" class="small white" text-anchor="middle">02</text>
 <text x="403" y="193" class="step" >QUOTE</text>
 <rect x="364" y="220" width="272" height="363" rx="14" fill="#f7f9fd" stroke="#e2e8f2"/>
-<text x="386" y="251" class="owner" >CARDANO PORTAL · REPO 2</text>
+<text x="386" y="251" class="owner" >PORTAL · REPO 2</text>
 <text x="386" y="290" class="heading" >Agree on the scope</text>
 <text x="386" y="318" class="small" >Frontend + quote service</text>
 <path d="M386 341H614" stroke="#dbe4ef"/>
@@ -59,7 +59,7 @@
 <text x="978" y="193" class="small white" text-anchor="middle">04</text>
 <text x="1003" y="193" class="step" >VERIFY</text>
 <rect x="964" y="220" width="272" height="363" rx="14" fill="#f7f9fd" stroke="#e2e8f2"/>
-<text x="986" y="251" class="owner" >CARDANO PORTAL · REPO 2</text>
+<text x="986" y="251" class="owner" >PORTAL · REPO 2</text>
 <text x="986" y="290" class="heading" >Verify the request</text>
 <text x="986" y="318" class="small" >Off-chain verification gate</text>
 <path d="M986 341H1214" stroke="#dbe4ef"/>
@@ -74,7 +74,7 @@
 <text x="1278" y="193" class="small white" text-anchor="middle">05</text>
 <text x="1303" y="193" class="step" >INVESTIGATE</text>
 <rect x="1264" y="220" width="272" height="363" rx="14" fill="#101b32" stroke="#101b32"/>
-<text x="1286" y="251" class="owner pale" >SHARED AI BACKEND · REPO 1</text>
+<text x="1286" y="251" class="owner pale" >AI BACKEND · REPO 1</text>
 <text x="1286" y="290" class="heading white" >Produce the evidence</text>
 <text x="1286" y="318" class="small pale" >Run the selected service</text>
 <path d="M1286 341H1514" stroke="#30405a"/>
