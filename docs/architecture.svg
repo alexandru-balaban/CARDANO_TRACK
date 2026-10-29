@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">IncidentGuard — request to evidence</title>
+<desc id="desc">Proposed request lifecycle. A human or AI agent requests a scoped quote from the Cardano portal. A wallet signs a payment on Cardano preprod. The portal checks confirmation, request binding and single use before dispatching an investigation to the shared AI backend. The backend produces an evidence report and audit record, and returns the report through the portal to the requester. Growth Pool credits are an optional extension. The BSV portal shares the AI backend.</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7" fill="none" stroke="#0033ad" stroke-width="1.4"/></marker>
+<style>text{font-family:Inter,Arial,sans-serif;fill:#15233c}.title{font-size:34px;font-weight:700;letter-spacing:-1px}.sub{font-size:16px;fill:#65738a}.eyebrow{font-size:11px;font-weight:700;letter-spacing:1.8px;fill:#0033ad}.step{font-size:13px;font-weight:700;letter-spacing:1px}.owner{font-size:10px;font-weight:700;letter-spacing:1.1px;fill:#66758f}.heading{font-size:23px;font-weight:700;letter-spacing:-.5px}.body{font-size:14px;fill:#63728a}.label{font-size:16px;font-weight:700}.small{font-size:14px;fill:#63728a}.white{fill:#fff}.pale{fill:#b8c8e1}.green{fill:#167a61}.return{font-size:14px;font-weight:600;fill:#0033ad}</style></defs>
+<rect width="1600" height="900" fill="white"/>
+
+<text x="64" y="47" class="eyebrow" >PROPOSED ARCHITECTURE</text>
+<text x="64" y="93" class="title" >From one request to evidence you can act on.</text>
+<text x="64" y="124" class="sub" >Cardano handles payment rules. The portal verifies access. The shared AI backend investigates.</text>
+<rect x="1374" y="58" width="162" height="30" rx="12" fill="#edf3ff" stroke="none"/>
+<text x="1455" y="78" class="eyebrow" text-anchor="middle">CARDANO PREPROD</text>
+<rect x="64" y="174" width="28" height="28" rx="8" fill="#0033ad" stroke="none"/>
+<text x="78" y="193" class="small white" text-anchor="middle">01</text>
+<text x="103" y="193" class="step" >REQUEST</text>
+<rect x="64" y="220" width="272" height="363" rx="14" fill="#f7f9fd" stroke="#e2e8f2"/>
+<text x="86" y="251" class="owner" >CLIENTS</text>
+<text x="86" y="290" class="heading" >Raise a concern</text>
+<text x="86" y="318" class="small" >Human or autonomous agent</text>
+<path d="M86 341H314" stroke="#dbe4ef"/>
+<text x="86" y="377" class="label" >Human operator</text>
+<text x="86" y="401" class="small" >Browser + CIP-30 wallet</text>
+<text x="86" y="448" class="label" >AI agent</text>
+<text x="86" y="472" class="small" >API key + budget cap</text>
+<text x="86" y="519" class="label" >Input</text>
+<text x="86" y="543" class="small" >Incident details + service tier</text>
+<path d="M342 291H357" fill="none" stroke="#0033ad" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="364" y="174" width="28" height="28" rx="8" fill="#0033ad" stroke="none"/>
+<text x="378" y="193" class="small white" text-anchor="middle">02</text>
+<text x="403" y="193" class="step" >QUOTE</text>
+<rect x="364" y="220" width="272" height="363" rx="14" fill="#f7f9fd" stroke="#e2e8f2"/>
+<text x="386" y="251" class="owner" >CARDANO PORTAL · REPO 2</text>
+<text x="386" y="290" class="heading" >Agree on the scope</text>
+<text x="386" y="318" class="small" >Frontend + quote service</text>
+<path d="M386 341H614" stroke="#dbe4ef"/>
+<text x="386" y="377" class="label" >Define the investigation</text>
+<text x="386" y="401" class="small" >Scope, price and quote expiry</text>
+<text x="386" y="448" class="label" >Set the spending limit</text>
+<text x="386" y="472" class="small" >Check the agent’s budget</text>
+<text x="386" y="519" class="label" >Bind the request</text>
+<text x="386" y="543" class="small" >Create a request identifier / hash</text>
+<path d="M642 291H657" fill="none" stroke="#0033ad" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="664" y="174" width="28" height="28" rx="8" fill="#167a61" stroke="none"/>
+<text x="678" y="193" class="small white" text-anchor="middle">03</text>
+<text x="703" y="193" class="step" >PAY</text>
+<rect x="664" y="220" width="272" height="363" rx="14" fill="#f1faf6" stroke="#cfe8dc"/>
+<text x="686" y="251" class="owner green" >CARDANO · PREPROD</text>
+<text x="686" y="290" class="heading" >Approve the payment</text>
+<text x="686" y="318" class="small" >Wallet + on-chain script</text>
+<path d="M686 341H914" stroke="#dbe4ef"/>
+<text x="686" y="377" class="label" >Wallet approval</text>
+<text x="686" y="401" class="small" >CIP-30 transaction handoff</text>
+<text x="686" y="448" class="label" >Bind payment to request</text>
+<text x="686" y="472" class="small" >Request hash in the datum</text>
+<text x="686" y="519" class="label" >Enforce script rules</text>
+<text x="686" y="543" class="small" >Single-use payment UTxO</text>
+<path d="M942 291H957" fill="none" stroke="#0033ad" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="964" y="174" width="28" height="28" rx="8" fill="#0033ad" stroke="none"/>
+<text x="978" y="193" class="small white" text-anchor="middle">04</text>
+<text x="1003" y="193" class="step" >VERIFY</text>
+<rect x="964" y="220" width="272" height="363" rx="14" fill="#f7f9fd" stroke="#e2e8f2"/>
+<text x="986" y="251" class="owner" >CARDANO PORTAL · REPO 2</text>
+<text x="986" y="290" class="heading" >Verify the request</text>
+<text x="986" y="318" class="small" >Off-chain verification gate</text>
+<path d="M986 341H1214" stroke="#dbe4ef"/>
+<text x="986" y="377" class="label" >Observe confirmation</text>
+<text x="986" y="401" class="small" >Check the on-chain transaction</text>
+<text x="986" y="448" class="label" >Validate the binding</text>
+<text x="986" y="472" class="small" >Match payment to the request</text>
+<text x="986" y="519" class="label" >Dispatch once</text>
+<text x="986" y="543" class="small" >Enforce expiry + prevent replay</text>
+<path d="M1242 291H1257" fill="none" stroke="#0033ad" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="1264" y="174" width="28" height="28" rx="8" fill="#0033ad" stroke="none"/>
+<text x="1278" y="193" class="small white" text-anchor="middle">05</text>
+<text x="1303" y="193" class="step" >INVESTIGATE</text>
+<rect x="1264" y="220" width="272" height="363" rx="14" fill="#101b32" stroke="#101b32"/>
+<text x="1286" y="251" class="owner pale" >SHARED AI BACKEND · REPO 1</text>
+<text x="1286" y="290" class="heading white" >Produce the evidence</text>
+<text x="1286" y="318" class="small pale" >Run the selected service</text>
+<path d="M1286 341H1514" stroke="#30405a"/>
+<text x="1286" y="377" class="label white" >Guardrail Agent</text>
+<text x="1286" y="401" class="small pale" >Review agent actions and risk</text>
+<text x="1286" y="448" class="label white" >Pentest Pro</text>
+<text x="1286" y="472" class="small pale" >Authorised targets and scope</text>
+<text x="1286" y="519" class="label white" >Report + audit record</text>
+<text x="1286" y="543" class="small pale" >Findings, citations, limitations</text>
+<path d="M1400 584V646H200V592" fill="none" stroke="#0033ad" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="453" y="626" width="694" height="40" rx="12" fill="white" stroke="none"/>
+<text x="800" y="651" class="return" text-anchor="middle">Evidence report returned through the portal to the requester</text>
+<text x="800" y="683" class="small" text-anchor="middle">Audit trail links the request, payment transaction and report.</text>
+<rect x="64" y="739" width="720" height="100" rx="12" fill="#f7f9fc" stroke="#e2e8f2"/>
+<text x="86" y="766" class="owner" >OPTIONAL EXTENSION</text>
+<text x="86" y="795" class="label" >Growth Pool</text>
+<text x="86" y="817" class="body" >Script-held funds · capped investigation credits · terms to be confirmed</text>
+<rect x="812" y="739" width="724" height="100" rx="12" fill="#f7f9fc" stroke="#e2e8f2"/>
+<text x="834" y="766" class="owner" >SHARED INFRASTRUCTURE</text>
+<text x="834" y="795" class="label" >BSV portal · Repo 3</text>
+<text x="834" y="817" class="body" >Separate chain-specific payments; the same AI investigation backend.</text>
+<text x="64" y="873" class="small" >Concept architecture · Wallet, payment, validator and backend integrations are not implemented yet.</text>
+<text x="1536" y="873" class="owner" text-anchor="end">PAVLEX / INCIDENTGUARD</text>
+</svg>

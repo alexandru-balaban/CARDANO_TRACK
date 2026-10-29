@@ -1,0 +1,33 @@
+%% Proposed architecture — integrations are not implemented yet.
+%% The portal's off-chain gate observes chain state before dispatching work.
+flowchart LR
+  classDef client fill:#F7F9FD,stroke:#DFE6F0,color:#15233C
+  classDef portal fill:#EFF3FF,stroke:#A8BCEE,color:#15233C
+  classDef chain fill:#F1FAF6,stroke:#91CBB3,color:#15233C
+  classDef backend fill:#101B32,stroke:#101B32,color:#FFFFFF
+  classDef note fill:#F7F9FC,stroke:#DFE6F0,color:#63728A
+
+  subgraph CLIENTS["01 · Request"]
+    H["Human operator<br/>Browser + CIP-30 wallet"]:::client
+    A["AI agent<br/>API key + budget cap"]:::client
+  end
+  Q["02 · Quote · Cardano portal / Repo 2<br/>Scope, price, expiry and budget<br/>Request identifier / hash"]:::portal
+  P["03 · Pay · Cardano preprod<br/>CIP-30 wallet approval<br/>Request hash in datum<br/>Single-use payment UTxO"]:::chain
+  V["04 · Verify · Cardano portal / Repo 2<br/>Observe confirmation and request binding<br/>Enforce expiry and prevent replay"]:::portal
+  subgraph BACKEND["05 · Investigate · Shared AI backend / Repo 1"]
+    S["Select service"]:::backend
+    G["Guardrail Agent<br/>Agent action and risk review"]:::backend
+    T["Pentest Pro<br/>Authorised target + scope check"]:::backend
+    R["Evidence report<br/>Findings, citations, limitations"]:::backend
+    L["Audit record<br/>Request + transaction + report"]:::backend
+    S --> G & T
+    G & T --> R
+    R --> L
+  end
+  H & A --> Q
+  Q -->|Wallet approves quoted payment| P
+  P -->|Portal observes on-chain proof| V
+  V -->|Verified request, dispatched once| S
+  R -->|Report through portal| CLIENTS
+  GP["Optional Growth Pool<br/>Script-held funds + capped credits<br/>Terms to be confirmed"]:::note
+  BSV["BSV portal / Repo 3<br/>Separate payments, shared AI backend"]:::note
