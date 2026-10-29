@@ -49,12 +49,17 @@ body{font-size:16px;line-height:1.6}
 .card li svg,.proof svg{flex-shrink:0;width:18px;height:18px}
 .journey-step{padding:26px 22px;display:flex;flex-direction:column}.journey-step small{margin-top:auto;padding-top:24px}.journey-step p{margin-bottom:0}
 .journey-top span{width:36px;height:36px;flex-shrink:0}
-.art{height:auto;min-height:480px;display:flex;flex-direction:column;justify-content:center;gap:16px;padding:20px 0}
+.art{height:auto;min-height:480px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:20px 0}
 .request{width:100%;max-width:440px;transform:none}.request h3{font-size:20px}.request label{margin-top:20px}.row.foot{flex-wrap:wrap;gap:8px;line-height:1.6}.bound>b,.bound>svg,.mini{flex-shrink:0}
-.float{position:relative;right:auto;bottom:auto;align-self:flex-end}.float b,.bound strong{font-size:16px}.caption{position:relative;left:auto;bottom:auto;align-self:flex-start}.halo{max-width:100%;top:60px}
+.float{position:relative;right:auto;bottom:auto;align-self:center}.float b,.bound strong{font-size:16px}.caption{position:relative;left:auto;bottom:auto;align-self:center;text-align:center}.halo{max-width:100%;top:60px}
 .trustrow{justify-content:space-between;padding:20px 0}.trustrow b{font-size:16px}
 .code,.agent>div,.hero>div,.gap-intro,.gap-signals{min-width:0}.codehead,.codefoot{height:auto;min-height:48px;padding:14px 18px;line-height:1.6}.codehead svg{flex-shrink:0}.code pre{font-size:15px;line-height:1.8}.code pre label,.codefoot span{color:#acbcd4}
 .poolrow{grid-template-columns:50px minmax(0,1fr) minmax(280px,360px)}.pool aside{padding:22px}.pool aside small{display:block;overflow-wrap:anywhere;line-height:1.6}
 .footer-brand small{font-size:14px;color:#b8c5da}.footer-legal{font-size:14px;color:#acbad0}.footer-grid b{font-size:14px}.footer-grid .pavlex-name span{font-size:inherit;color:#83a5ff}
 @media(max-width:1050px){.nav nav{display:none}.hero{grid-template-columns:1fr;gap:32px}.hero>div:first-child{max-width:720px}.art{max-width:520px;width:100%;margin:auto;transform:none}.journey,.why{grid-template-columns:repeat(2,minmax(0,1fr))}.journey-step{border-bottom:1px solid #e5eaf2}.journey-step:nth-child(2){border-right:0}.journey-step:nth-child(n+3){border-bottom:0}.agent{grid-template-columns:1fr;gap:32px}.poolrow{grid-template-columns:45px 1fr}.pool aside{grid-column:2}.footer-grid{grid-template-columns:1.7fr 1fr 1fr}}
 @media(max-width:760px){.lead{font-size:17px}.heading p{max-width:none}.hero h1{font-size:40px}.art{min-height:0;margin-top:28px}.request{padding:22px 18px}.trustrow{display:flex;justify-content:flex-start;gap:16px 24px}.trustrow>small{width:100%}.trustrow b{flex:1 1 220px}.journey,.why{grid-template-columns:1fr}.journey-step,.journey-step:nth-child(n+3){border-right:0;border-bottom:1px solid #e5eaf2}.journey-step:last-child{border-bottom:0}.journey-step small{padding-top:18px}.pool aside{grid-column:1/-1}.footer-grid{grid-template-columns:1fr 1fr}.code pre{font-size:15px;padding:20px 16px}.nav{height:auto;min-height:76px;flex-wrap:wrap;padding-top:14px;padding-bottom:14px;gap:12px}.nav>.btn{margin-left:0}.eyebrow{flex-wrap:wrap}.scope{line-height:1.6}}
+
+/* Keep the illustration and its supporting labels on one center axis. */
+.request-visual{position:relative;display:grid;place-items:center;width:100%;max-width:440px}
+.request-visual .request{position:relative}
+.request-visual .halo{width:90%;height:auto;aspect-ratio:1;max-width:none;left:50%;top:50%;right:auto;transform:translate(-50%,-50%)}
