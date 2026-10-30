@@ -1,43 +1,68 @@
-# PavLex / Traceward — Cardano track handoff
+# Traceward — frontend handoff
 
-## What is implemented
+Traceward is the working product name for the Cardano track. This repository contains the React/Vite frontend; the shared AI backend is maintained separately.
 
-- A responsive Cardano landing page at `/`.
-- Product positioning for Traceward: per-request security investigations for human operators and AI agents.
-- Four-step journey: quote, wallet approval, payment/request binding, evidence report.
-- Guardrail Agent and Pentest Pro tier descriptions. Pentest Pro is framed for authorised testing only.
-- Agent API example with budget enforcement copy.
-- Growth Pool copy that clearly states the pool is non-custodial and script-held.
-- Cardano eUTxO and CIP-30 framing.
-- PavLex-branded footer.
-- Architecture artifacts:
-  - `docs/architecture.html`
-  - `docs/architecture.svg`
-  - `docs/architecture.mmd`
+## Run locally
 
-## Run it
-
-The machine needs Node.js. Then run:
+Use Node.js 24 and pnpm 11.25.0, matching the GitHub Pages workflow.
 
 ```sh
-pnpm install
+pnpm install --frozen-lockfile
 pnpm dev
 ```
 
-Open the local URL printed by Vite, usually `http://127.0.0.1:5173/`.
+Vite prints the local URL. For a production build and preview:
 
-## Project decisions
+```sh
+pnpm build
+pnpm preview
+```
 
-- Traceward is the temporary working product name, pending final branding.
+## Implemented
 
-- Current visual identity: Cardano blue `#0033AD`, defined in `src/theme.ts`.
-- Prices, pool rewards, and terms are intentional placeholders in `src/config/placeholders.ts`.
-- No real wallet, API, ADA payment, validator, or backend integration exists yet. Landing-page calls to action point to the investigation flow. The interactive `/app` portal is future work.
-- The current local dev server was started through Codex's bundled Node runtime because system Node was unavailable. On a normal computer, standard Node LTS is enough.
+- Responsive landing page with centered hero, an illustrative workspace, service cards, agent API example, Growth Pool explanation, and Cardano payment framing.
+- Three working preview tabs: investigation, payment approval, and evidence report.
+- Mobile navigation, expandable FAQs, and a copy button for the illustrative API example.
+- Readable secondary text and aligned service-card actions.
+- Architecture page and downloadable SVG, with Mermaid source.
 
-## Suggested next work
+## Source map
 
-1. Build the clickable `/app` portal and mocked investigation flow.
-2. Add wallet connection through CIP-30 after choosing Mesh SDK or Lucid Evolution.
-3. Connect quotes, payments, report generation, and audit history to the shared backend.
-4. Fill confirmed prices and Growth Pool terms in `src/config/placeholders.ts`.
+| File | Purpose |
+| --- | --- |
+| `src/main.tsx` | Landing page, `DemoDashboard`, preview state, FAQ content, illustrative API example |
+| `src/style.css` | Rendered styles, colors, typography, and responsive layout |
+| `src/theme.ts` | Palette reference; currently not imported by the page |
+| `src/config/placeholders.ts` | Earlier commercial placeholders; currently not imported by the page |
+| `docs/architecture.html` | Standalone architecture page |
+| `docs/architecture.svg` | Downloadable architecture diagram |
+| `docs/architecture.mmd` | Conceptual architecture in Mermaid |
+| `vite.config.ts` | React plugin and relative asset base |
+| `.github/workflows/pages.yml` | Production build and GitHub Pages deployment |
+
+## Backend integration status
+
+The workspace, request `TW-0248`, status labels, payment binding, and evidence content are illustrative UI data. The preview tab state is local React state. No API calls are executed by the application.
+
+The `apiExample` string in `src/main.tsx` shows a proposed request with `tier`, `incident`, and `budgetAda`. `INVESTIGATION_API`, `apiKey`, and `YOUR_BUDGET` are example identifiers, not configured values. This snippet is not an agreed or implemented backend contract.
+
+There is no `/app` route, API client, authentication flow, connected wallet, payment verification, validator integration, or report persistence yet. Landing-page buttons navigate to page sections. The architecture describes the proposed system, not deployed services.
+
+### Integration points to agree
+
+1. Backend routes and request/response schemas for quotes, investigation submission, job status, evidence reports, and audit history.
+2. Authentication and the distinction between operator wallet approval and agent access.
+3. Confirmation and request-binding proof required before the backend dispatches an investigation once.
+4. Quote expiry, budget enforcement, error states, and report delivery.
+
+The intended demo network is Cardano preprod. Pentest Pro requires authorised targets and explicit scope. Growth Pool credits, reward rules, and prices are not confirmed.
+
+## Deployment
+
+`main` automatically builds and deploys to GitHub Pages. Only generated `dist/` output is deployed; the build also copies the architecture files to `dist/docs/`. Relative links support the `/CARDANO_TRACK/` repository path.
+
+GitHub Pages serves the static frontend. The shared backend needs its own hosting, API URL, and appropriate browser access configuration. Vite exposes `VITE_` environment values to the browser, so those values must be public configuration.
+
+## Visual direction
+
+The landing page follows the Sirius reference's centered composition, charcoal type, blue actions, pastel UI tiles, and pale section backgrounds. The current primary blue is `#2C49D8`. Landing-page colors are applied in `src/style.css`.
